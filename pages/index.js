@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../public/images/logo.svg";
 import menu from "../public/images/icon-menu.svg";
 import HeroMobile from "../public/images/image-hero-mobile.png";
+import HeroDesktop from "../public/images/image-hero-desktop.png"
 import Audiophile from "../public/images/client-audiophile.svg";
 import Databiz from "../public/images/client-databiz.svg";
 import Maker from "../public/images/client-maker.svg";
@@ -22,7 +23,7 @@ export default function Home() {
         ></link>
       </Head>
       <main>
-        <section className="p-5 text-medium-gray font-medium">
+        <section className="p-5 text-medium-gray font-medium mb-5">
           <nav>
             <div className="flex justify-between">
               <ul className="flex gap-12">
@@ -62,30 +63,51 @@ export default function Home() {
           </nav>
         </section>
 
-        <section>
-          <div>
-            <Image src={HeroMobile} alt="" className="min-w-full" />
-            <div className="text-center">
-              <h1 className="text-4xl font-epilogue font-bold mt-10">Make remote work</h1>
-              <p className="text-medium-gray font-epilogue my-10 mb-12">
+        <section className="md:px-16 lg:px-24 xl:px-36 3xl:px-48">
+          <div className="flex-column lg:flex lg:flex-row-reverse relative">
+            <div className="lg:hidden mx-auto flex justify-center">
+              <Image src={HeroMobile} alt="" className="" />
+            </div>
+            <div className="hidden lg:flex lg:relative lg:left-6 xl:hidden">
+              <Image src={HeroDesktop} alt="" className="" width={405} height={540} layout="fixed"  />
+            </div>
+            <div className="hidden xl:flex xl:relative xl:left-6 3xl:hidden">
+              <Image src={HeroDesktop} alt="" className="" width={550} height={733} layout="fixed"  />
+            </div>
+            <div className="hidden 3xl:flex 3xl:relative">
+              <Image src={HeroDesktop} alt="" className="" width={600} height={800} layout="fixed"  />
+            </div>
+            <div className="px-3 text-center lg:text-left mx-auto lg:relative my-auto lg:right-6 xl:right-12 3xl:right-24">
+              <h1 className="text-4xl font-epilogue font-bold mt-10 lg:hidden">
+                Make remote work
+              </h1>
+              <h1 className="hidden text-6xl font-epilogue font-bold mt-10 lg:inline">
+                Make <br /> remote work
+              </h1>
+              <p className="text-medium-gray font-epilogue my-10 mb-12 lg:max-w-lg">
                 Get your team in sync, no matter your location. Streamline
                 processes, create team rituals, and watch productivity soar.
               </p>
-              <a href="#" className="py-3 px-5 rounded-xl bg-black border border-black text-white font-epilogue hover:bg-white hover:text-black">Learn More</a>
-                <ul className="flex justify-evenly mt-16">
-                  <li>
-                    <Image alt="" src={Databiz} />
-                  </li>
-                  <li>
-                    <Image alt="" src={Audiophile} />
-                  </li>
-                  <li>
-                    <Image alt="" src={Meet} />
-                  </li>
-                  <li>
-                    <Image alt="" src={Maker} />
-                  </li>
-                </ul>
+              <a
+                href="#"
+                className="py-3 px-5 rounded-xl bg-black border border-black text-white font-epilogue hover:bg-white hover:text-black"
+              >
+                Learn More
+              </a>
+              <ul className="flex gap-3 justify-evenly mt-16 lg:mt-28 ">
+                <li>
+                  <Image alt="" src={Databiz} />
+                </li>
+                <li>
+                  <Image alt="" src={Audiophile} />
+                </li>
+                <li>
+                  <Image alt="" src={Meet} />
+                </li>
+                <li>
+                  <Image alt="" src={Maker} />
+                </li>
+              </ul>
             </div>
           </div>
         </section>

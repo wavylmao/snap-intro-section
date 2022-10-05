@@ -6,8 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1600px",
+      },
+      spacing: {
+        "hero-w": "406px",
+        "hero-h": "541px",
+      },
       fontFamily: {
-        epilogue: ['"Epilogue"', 'sans-serif'],
+        epilogue: ['"Epilogue"', "sans-serif"],
       },
       colors: {
         "medium-gray": "hsl(0, 0%, 41%)",
